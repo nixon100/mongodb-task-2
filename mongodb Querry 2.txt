@@ -1,0 +1,36 @@
+1. db.task.find({
+  date: {
+    $gte: ISODate("2020-10-01T00:00:00.000Z"),
+    $lte: ISODate("2020-10-31T00:00:00.000Z")
+  }
+})
+	
+  db.topics.find({
+  date: {
+    $gte: ISODate("2020-10-01T00:00:00.000Z"),
+    $lte: ISODate("2020-10-31T00:00:00.000Z")
+  }
+})
+
+2. db.company_drives.find({
+  date: {
+    $gte: ISODate("2020-10-01T00:00:00.000Z"),
+    $lte: ISODate("2020-10-31T23:59:59.999Z")
+  }
+}) 
+
+3. db.company_drives.find({ student: { $exists: true } })
+
+4. db.users.find({ student_name: "john" }, { _id: 0, codekata_submitted: 1 })
+
+5. db.mentor.find({ "mentee's count": { $gt: 15 } })
+
+6. db.users.countDocuments({
+   attendance: "absent",
+   task_submitted: "not submitted",
+   date: {
+    $gte: ISODate("2020-10-15T00:00:00.000+00:00"),
+    $lte: ISODate("2020-10-31T00:00:00.000+00:00")
+   }
+  })	
+			
